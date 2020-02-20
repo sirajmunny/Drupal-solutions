@@ -1,0 +1,24 @@
+# Redpepper RESTful API endpoints
+
+rp_region.post:
+  path: '/productpricing/region_custom_fields/json'
+  defaults: { _controller: '\Drupal\rp_region\Controller\RegionCustomFieldsController::post' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+rp_region.product_image_s3_delete:
+  path: '/region/product_images/s3_delete/json'
+  defaults: { _controller: '\Drupal\rp_region\Controller\ProductImageDeleteController::ProductImages3Delete' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+rp_region.import_geolocation_form:
+  path: '/redpepper/region/import-geolocation'
+  defaults:
+    _form: '\Drupal\rp_region\Form\ImportRegionGeolocationForm'
+    _title: 'Import Regions Geo Location'
+  requirements:
+    _permission: 'create region geo location content'
+
